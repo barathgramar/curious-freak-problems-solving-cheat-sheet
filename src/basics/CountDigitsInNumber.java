@@ -1,3 +1,5 @@
+package basics;
+
 public class CountDigitsInNumber {
     static int countNumberThroughLoop(Long number) {
         String length = String.valueOf(number);

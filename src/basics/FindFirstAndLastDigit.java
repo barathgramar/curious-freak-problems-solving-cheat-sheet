@@ -1,3 +1,5 @@
+package basics;
+
 //12-July-2024
 public class FindFirstAndLastDigit {
     static char getLastDigit(String a, String b) {

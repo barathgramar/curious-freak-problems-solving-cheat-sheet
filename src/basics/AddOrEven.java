@@ -1,3 +1,5 @@
+package basics;
+
 public class AddOrEven {
     static String oddEvenTernary(long n) {
         return n % 2 == 0 ? "even" : "odd";
