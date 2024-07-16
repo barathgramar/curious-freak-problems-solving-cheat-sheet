@@ -1,11 +1,16 @@
 package basics;
 
+import java.math.BigInteger;
+
 //12-July-2024
 public class FindFirstAndLastDigit {
-    static char getLastDigit(String a, String b) {
-        double power = Math.pow(Double.parseDouble(a), Double.parseDouble(b));//power the given string numbers
-        String intValue = String.valueOf((long) power);// convert the double value to long then convert to string
-        return intValue.charAt(intValue.length() - 1);//find last digit of the value You can call the last digit by string operation function here.
+    static int getLastDigit(String a, String b) {
+        if(b.equals("0")) return 1;//anything power 0 is equals to 1
+        BigInteger aValue =new BigInteger(a);
+        BigInteger bValue =new BigInteger(b);
+
+        BigInteger exponent = bValue.mod(BigInteger.valueOf(4)).add(BigInteger.valueOf(4));
+        return aValue.modPow(exponent,BigInteger.TEN).intValue();
     }
 
     static long firstDigitWithLoop(long n) {
@@ -35,8 +40,8 @@ public class FindFirstAndLastDigit {
         return value.charAt(value.length() - 1) - '0';//return last index of the string
     }
 
-    public static void main(String args[]) {
-        System.out.println(getLastDigit("735", "2"));
+    public static void main(String[] args) {
+        System.out.println(getLastDigit("267346343", "16320"));
         System.out.println(firstDigitWithLoop(97324124122433232L));
         System.out.println(firstDigitByStringOperation(97324124122433232L));
         System.out.println(firstDigitWithoutLoop(97324124122433232L));

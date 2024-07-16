@@ -18,7 +18,7 @@ public class AddOrEven {
     }
 
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         System.out.println("Add Or even ternary " + oddEvenTernary(1352363463235324245L));
         System.out.println("Add Or even if else " + oddOrEvenIfElse(1352363463235324245L));
     }
